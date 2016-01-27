@@ -1,0 +1,20 @@
+Install python 3.4.2
+
+Create a new virtual env (as we use python 3 to create the env, python will default to 3 whilst in the env):
+>py -3 -m venv env
+
+Start the virtual environment:
+>env\Scripts\activate.bat
+
+Install django 1.9:
+>pip install django==1.9
+
+Start Django project:
+>django-admin startproject jobbook .
+
+Create database (sqlite3):
+>python manage.py migrate
+
+Create application:
+>python manage.py startapp core
+
