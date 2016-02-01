@@ -3,7 +3,7 @@ from django.utils import timezone
 
 
 class Client(models.Model):
-    """Model Client which store the client details."""
+    """Model Client which stores the client details."""
 
     first_name = models.CharField(max_length=64)
     last_name = models.CharField(max_length=64)
