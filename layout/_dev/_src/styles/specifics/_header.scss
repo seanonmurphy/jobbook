@@ -1,0 +1,224 @@
+
+// Init Header
+/////////////////////////////
+$header-height: 80px;
+$sub-menu-height: 120px;
+
+// Animation
+/////////////////////////////
+
+%anim-clock {
+  img {
+    animation: spin 4s infinite linear;
+  }
+  @keyframes spin {
+    from {transform:rotate(0deg);}
+    to {transform:rotate(360deg);}
+  }
+}
+
+%anim-triangle {
+  a:after {
+    color: #fff;
+  }
+}
+
+// Placeholders
+///////////////////////////////
+
+// Triangle (nav)
+%triangle {
+  & > a:after {
+    color: $color-light-blue;
+    content: "▾";
+    position: relative;
+    top: 0;
+    left: 10px;
+  }
+}
+
+// Placeholder (nav)
+%menu-li {
+  cursor: pointer;
+  display: block;
+  height: $header-height;
+  line-height: $header-height;
+  float: left;
+  text-align: center;
+  transition: all 0.5s ease-in-out;
+  &.w-sub {
+    @extend %triangle;
+    width: 120px;
+    background: $color-dark-blue;
+    &:last-child { background: $color-mid-blue; }
+    &:hover {
+      @extend %anim-triangle;
+      background-color: darken($color-dark-blue,2%);
+    }
+  }
+  &.b-item {
+    width: 250px;
+    background: $color-light-blue;
+    &:hover {
+      @extend %anim-clock;
+      background: darken($color-light-blue,5%);
+    }
+  }
+}
+
+// Placeholder (sub-nav)
+%sub-menu {
+  ul {
+    display: block;
+    position: relative;
+    height: $sub-menu-height;
+    min-width: 700px;
+    right: 200px;
+    li {
+      height: $sub-menu-height;
+      line-height: 25px;
+      padding: 10px;
+      min-width: 150px;
+      background: #fff;
+      a {
+        width: 100%;
+        height: 100%;
+        position: relative;
+        display: block;
+        color: $color-grey;
+        text-align: center;
+        font-size: 12px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        &:hover {
+          background: $color-light-grey;
+          i {
+            background: $color-light-blue;
+            transition: transform .5s ease;
+            transform: translateY(-5px);
+          }
+        }
+      }
+    }
+  }
+}
+
+// Placeholder (icon-nav)
+%icon-nav {
+  i {
+  margin: 0 auto 5px auto;
+  height: 45px;
+  width: 45px;
+  background-color: $color-light-grey;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+    img {
+      width: 20px;
+      height: 20px;
+    }
+  }
+}
+
+// Colors BG (not used)
+%menu-colors {
+  &:nth-child(1) {
+    background: #f4f4f4;
+  }
+  &:nth-child(2) {
+    background: #ededed;
+  }
+  &:nth-child(3) {
+    background: #e6e6e6;
+  }
+  &:nth-child(4) {
+    background: #dedddd;
+  }
+}
+
+// Classes
+////////////////////////////
+
+header {
+  z-index: 10;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: $header-height;
+  background: #fff;
+  img {
+    height: 17px;
+    vertical-align: middle;
+  }
+  a {
+    display: block;
+    text-transform: uppercase;
+    font-weight: bold;
+  }
+}
+
+.logo {
+  display: block;
+  float: left;
+  height: $header-height;
+  line-height: $header-height;
+  width: 115px;
+  text-align: center;
+  background: $color-dark-blue;
+  display: flex;
+  justify-content: center;
+  img {
+    align-self: center;
+    height: 50px;
+  }
+}
+
+nav {
+  float: left;
+  height: $header-height;
+  a { color: #fff; }
+  li {
+    & > ul { display: none; }
+    @extend %menu-li;
+    &.w-sub:hover { @extend %sub-menu; @extend %icon-nav; }
+  }
+}
+
+.r-item {
+  a { color: #fff; }
+  width: 120px;
+  float: right;
+  display: block;
+  height: $header-height;
+  line-height: $header-height;
+  text-align: center;
+  background: $color-red;
+  transition: background 0.5s ease;
+  &:hover {
+    background: darken($color-red,5%);
+  }
+}
+
+.searchbox {
+  outline: none;
+  border: 0;
+  box-sizing: border-box;
+  float: left;
+  display: block;
+  height: $header-height;
+  min-width: 400px;
+  background-image: url(../img/icon-search.svg);
+  background-repeat: no-repeat;
+  background-position: 10px center;
+  background-size: 30px;
+  padding-left: 50px;
+  font-family: $main-font;
+  font-size: 18px;
+  transition: background 0.5s ease;
+  &:focus {
+    background-image: url(../img/icon-search-active.svg);
+  }
+}

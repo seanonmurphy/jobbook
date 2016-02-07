@@ -1,0 +1,117 @@
+// Init
+$job-height: 130px;
+$colorStart: $color-light-blue;
+$colorMid: $color-green;
+$colorEnd: $color-red;
+
+
+// Aninations
+//////////////////////////
+
+// Animation Jobs
+%anim-hover-jobs {
+  transition: all 1s ease;
+  cursor: pointer;
+  transition: transform .5s ease;
+  transform: translateY(-5px);
+  .job-img {
+    transition: transform .2s ease;
+    transform: translateY(-2px);
+  }
+}
+
+
+// Placeholders
+////////////////////////
+
+
+// Placeholder (job-list)
+%job-list-li {
+  a { display: block; }
+  position: relative;
+  float: left;
+  width: 300px;
+  height: $job-height;
+  margin: 0 20px 20px 0;
+  transition: all .7s ease;
+  background: #fff;
+  padding: 15px;
+  &:hover{ @extend %anim-hover-jobs }
+}
+
+
+// Classes
+//////////////////////////
+
+
+.job-info {
+  width: 50%;
+  height: $job-height;
+  color: $color-dark-blue;
+  text-transform: uppercase;
+  vertical-align: top;
+  padding: 0 0 0 15px;
+  display: inline-flex;
+  flex-direction: column;
+  h5 { font-weight: bolder; }
+}
+
+.job-placeholder {display: inline-table;
+  width: 118px;
+  height: 120px;
+  background: $color-light-grey;
+  border-radius: 3px;
+  transition: transform .5s ease;
+  border-radius: 3px;
+  span {
+    color: #fff;
+    text-align: center;
+    display: table-cell;
+    vertical-align: middle;
+    font-size: 50px;
+  }
+  img {
+    filter: grayscale(1);
+    mix-blend-mode: multiply;
+    width: 80px;
+    height: auto;
+    text-align: center;
+    text-align: center;
+    display: table-cell;
+    vertical-align: middle;
+  }
+}
+
+.progress {
+  margin-top: auto;
+  text-transform: uppercase;
+  h6 {
+    font-size: 13px;
+    font-weight: 700;
+    color: $color-mid-grey;
+    span { float: right; }
+  }
+  .status {
+    box-shadow: rgba(0, 0, 0, 0.2) 0 1px 1px -1px;
+    position: relative;
+    width: 100%;
+    height: 7px;
+    background: $color-light-grey;
+    overflow: hidden;
+    span {
+      display: block;
+      width: 0%;
+      height: 15px;
+      transition: width 1.5s ease-in-out;
+      //background-image: linear-gradient(to right, $colorStart 0%, $colorMid 40%, $colorEnd 100%);
+      background-image: linear-gradient(to right, #f1a165, #f36d0a);
+      background-size: 100%;
+    }
+  }
+}
+
+.job-list {
+  padding: 20px 0;
+  display: block;
+  li { @extend %job-list-li; }
+}

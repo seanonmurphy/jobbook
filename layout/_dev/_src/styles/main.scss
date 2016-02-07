@@ -1,0 +1,55 @@
+/**
+ * Breakpoint for responsive design
+ * Installation: npm install breakpoint-sass --save-dev
+ */
+// @import "../../node_modules/breakpoint-sass/stylesheets/_breakpoint.scss";
+
+
+/**
+ * Susy for making layout
+ * Installation: npm install susy --save-dev
+ */
+// @import "../../node_modules/susy/sass/_susy.scss";
+
+
+/**
+ * Structure inspired by DoCSSa 2.0 {dok~sa} - Sass based CSS architecture and methodology
+ * - Base = variables, fonts, mixins, helpers... common styles used across the entire site
+ * - Components = reusable components like buttons, tabs, etc...
+ * - Specifics - declarations specific to the project
+ * - Vendor - files that come from third parties (colorbox, owl carousel, etc.)
+ */
+
+// Base
+@import "base/_h5bp"; // base from HTML5 boilerplate
+@import "base/_reset";
+@import "base/_variables";
+
+// Components
+// @import "components/_buttons";
+
+// Specifics
+@import "specifics/_header";
+@import "specifics/_layout";
+@import "specifics/_jobs";
+@import "specifics/_details";
+
+// Vendor
+// @import "vendor/_owl-carousel";
+
+// Helpers
+@import "base/_helpers";
+
+body,
+html {
+  width: 100%;
+  height: 100%;
+  font-family: 'Titillium Web', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-weight: normal;
+  font-size: 95%;
+  line-height: 25px;
+  background: #ebf2f8;
+}
+
