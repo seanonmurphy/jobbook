@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Jobbook</title>
+  <meta name="Author" content="">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <!-- build:css build/css/main.min.css -->
+  <link href='https://fonts.googleapis.com/css?family=Titillium+Web:400,600,300' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="build/css/main.css">
+  <!-- endbuild -->
+</head>
+
+<body>
+  <header>
+    <a href="/" class="logo">
+      <img src="build/img/logo-main.svg" alt="Jobbook">
+    </a>
+    <nav>
+      <ul>
+        <li class="b-item">
+          <a href="#">
+            <img src="build/img/icon-clock.svg">
+            <span>Time Track</span>
+          </a>
+        </li>
+        <li class="w-sub"><a href="#">Jobs</a>
+          <ul>
+            <li>
+              <a href="#">
+                <i class="nav-icon">
+                  <img src="build/img/icon-book.svg">
+                </i>
+                <span>List all jobs</span>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <i class="nav-icon">
+                  <img src="build/img/icon-write.svg">
+                </i>
+                <span>Add new job</span>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <i class="nav-icon">
+                  <img src="build/img/icon-search.svg">
+                </i>
+                <span>Search for job</span>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <i class="nav-icon">
+                  <img src="build/img/icon-pin.svg">
+                </i>
+                <span>Bookmarks</span>
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li class="w-sub">
+          <a href="#">Clients</a>
+          <ul>
+            <li>
+              <a href="#">
+                <i class="nav-icon">
+                  <img src="build/img/icon-users.svg">
+                </i>
+                <span>List of clients</span>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <i class="nav-icon">
+                  <img src="build/img/icon-write.svg">
+                </i>
+                <span>Add new client</span>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <i class="nav-icon">
+                  <img src="build/img/icon-search.svg">
+                </i>
+                <span>Search for client</span>
+              </a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+    <input class="searchbox" type="text">
+    <div class="r-item">
+      <a href="#"><img src="build/img/icon-user.svg"></a>
+    </div>
+  </header>
+  
+  <section class="details margin-t200" id="js-details">
+    <h2>HANGOUT IMPROVEMENTS</h2>
+    <p class="info"><a href="#">Google</a> / create at 2015, january 29 <span>ARCHIVED</span></p>
+    
+    <div class="container">
+      <div class="header-info">
+        <div class="job-placeholder js-rand"><span>SK</span></div>
+        <div class="desc">
+          <span>Desc</span>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus imperdiet mollis turpis nec tincidunt. Pellentesque quis placerat odio. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Aenean nisi purus</p>
+        </div>
+        <div class="report-status">
+          <p><strong>Status:</strong>10H / 100H</p>
+          <p><strong>Hourly rate:</strong>$50</p>
+          <p><strong>Status 03:</strong>undefined</p>
+          <div class="progress">
+            <h6>Budget <span>50%</span></h6>
+            <div class="status js-progress" data-progress="50">
+              <span></span>
+            </div>
+        </div>
+      </div>
+      </div>
+    </div>
+  </section>
+  
+  <section>
+    <div class="container">
+      <h3>Accomplished tasks</h3>
+      <ul class="breadcrumbs">
+        <li><a href="#" class="active">All</a></li>
+        <li><a href="#">Recents Tasks</a></li>
+        <li><a href="#">Older Tasks</a></li>
+      </ul>
+      <table class="tasks-table" cellpadding="0" cellspacing="0">
+        <tr>
+          <th>Task Description</th>
+          <th>Time Spent</th>
+          <th>When</th>
+        </tr>
+        <tr>
+          <td>BACKING UP OLD FILES</td>
+          <td>2.5H</td>
+          <th>05/02/2015</th>
+        </tr>
+        <tr>
+          <td>CREATING A NEW TEMPLATE, PROTOTYPING</td>
+          <td>2.5H</td>
+          <th>YESTERDAY</th>
+        </tr>
+        <tr>
+          <td>BACK-END PROPOSAL</td>
+          <td>5H</td>
+          <th>YESTERDAY</th>
+        </tr>
+      </table>
+    </div>
+  </section>
+
+  <ul class="edit-popup" id="js-edit-task">
+    <li><a href="#">Edit Task</a></li>
+    <li><a href="#">Delete Task</a></li>
+    <li><a href="#">Cancel</a></li>
+  </ul>
+  
+  <!-- build:js build/js/bundle.min.js -->
+  <script src="build/js/vendors.js"></script>
+  <script src="build/js/main.js"></script>
+  <!-- endbuild -->
+
+</body>
+
+</html>
