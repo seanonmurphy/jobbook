@@ -1,4 +1,5 @@
 from django.shortcuts import render
+# from django.contrib.auth.models import User
 from .models import Client, Job
 
 
@@ -8,6 +9,9 @@ def index(request):
 
 
 def clients(request):
+    # Update to only get clients for this user
+    # user = User.objects.get(username='admin')
+
     clients = Client.objects.all()
 
     all_clients = []

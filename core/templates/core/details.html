@@ -1,3 +1,4 @@
+{% load staticfiles %}
 <!DOCTYPE html>
 <html>
 
@@ -8,20 +9,20 @@
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <!-- build:css build/css/main.min.css -->
   <link href='https://fonts.googleapis.com/css?family=Titillium+Web:400,600,300' rel='stylesheet' type='text/css'>
-  <link rel="stylesheet" href="build/css/main.css">
+  <link rel="stylesheet" href="{% static 'css/main.css' %}">
   <!-- endbuild -->
 </head>
 
 <body>
   <header>
     <a href="/" class="logo">
-      <img src="build/img/logo-main.svg" alt="Jobbook">
+      <img src="{% static 'img/logo-main.svg' %}" alt="Jobbook">
     </a>
     <nav>
       <ul>
         <li class="b-item">
           <a href="#">
-            <img src="build/img/icon-clock.svg">
+            <img src= "{% static 'img/icon-clock.svg' %}">
             <span>Time Track</span>
           </a>
         </li>
@@ -30,7 +31,7 @@
             <li>
               <a href="#">
                 <i class="nav-icon">
-                  <img src="build/img/icon-book.svg">
+                  <img src= "{% static 'img/icon-book.svg' %}">
                 </i>
                 <span>List all jobs</span>
               </a>
@@ -38,7 +39,7 @@
             <li>
               <a href="#">
                 <i class="nav-icon">
-                  <img src="build/img/icon-write.svg">
+                  <img src= "{% static 'img/icon-write.svg' %}">
                 </i>
                 <span>Add new job</span>
               </a>
@@ -46,7 +47,7 @@
             <li>
               <a href="#">
                 <i class="nav-icon">
-                  <img src="build/img/icon-search.svg">
+                  <img src= "{% static 'img/icon-search.svg' %}">
                 </i>
                 <span>Search for job</span>
               </a>
@@ -54,7 +55,7 @@
             <li>
               <a href="#">
                 <i class="nav-icon">
-                  <img src="build/img/icon-pin.svg">
+                  <img src= "{% static 'img/icon-pin.svg' %}">
                 </i>
                 <span>Bookmarks</span>
               </a>
@@ -67,7 +68,7 @@
             <li>
               <a href="#">
                 <i class="nav-icon">
-                  <img src="build/img/icon-users.svg">
+                  <img src= "{% static 'img/icon-users.svg' %}">
                 </i>
                 <span>List of clients</span>
               </a>
@@ -75,7 +76,7 @@
             <li>
               <a href="#">
                 <i class="nav-icon">
-                  <img src="build/img/icon-write.svg">
+                  <img src= "{% static 'img/icon-write.svg' %}">
                 </i>
                 <span>Add new client</span>
               </a>
@@ -83,7 +84,7 @@
             <li>
               <a href="#">
                 <i class="nav-icon">
-                  <img src="build/img/icon-search.svg">
+                  <img src= "{% static 'img/icon-search.svg' %}">
                 </i>
                 <span>Search for client</span>
               </a>
@@ -94,14 +95,14 @@
     </nav>
     <input class="searchbox" type="text">
     <div class="r-item">
-      <a href="#"><img src="build/img/icon-user.svg"></a>
+      <a href="#"><img src= "{% static 'img/icon-user.svg' %}"></a>
     </div>
   </header>
-  
+
   <section class="details margin-t200" id="js-details">
     <h2>HANGOUT IMPROVEMENTS</h2>
     <p class="info"><a href="#">Google</a> / create at 2015, january 29 <span>ARCHIVED</span></p>
-    
+
     <div class="container">
       <div class="header-info">
         <div class="job-placeholder js-rand"><span>SK</span></div>
@@ -123,7 +124,7 @@
       </div>
     </div>
   </section>
-  
+
   <section>
     <div class="container">
       <h3>Accomplished tasks</h3>
@@ -162,10 +163,10 @@
     <li><a href="#">Delete Task</a></li>
     <li><a href="#">Cancel</a></li>
   </ul>
-  
+
   <!-- build:js build/js/bundle.min.js -->
-  <script src="build/js/vendors.js"></script>
-  <script src="build/js/main.js"></script>
+  <script src= "{% static 'js/vendors.js' %}"></script>
+  <script src= "{% static 'js/main.js' %}"></script>
   <!-- endbuild -->
 
 </body>
