@@ -41,3 +41,7 @@ def jobs(request):
 
     context = {'jobs': all_jobs}
     return render(request, 'core/jobs.html', context)
+
+def job(request):
+    context = {}
+    return render(request, 'core/job.html', context)
