@@ -28,7 +28,7 @@ class Job(models.Model):
 
     job_name = models.CharField(max_length=128)
     job_description = models.TextField()
-    hourly_rate = models.IntegerField()
+    hourly_rate = models.IntegerField(blank=True, null=True)
     client = models.ForeignKey('Client')
 
     def __str__(self):
