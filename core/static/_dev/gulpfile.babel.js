@@ -39,7 +39,7 @@ const BROWSERSYNC_PROXY = false;
 const ROOT_PATH = './';
 const SRC_PATH = '_src/';
 const DEV_PATH = '../_dev';
-const BUILD_PATH = '../build/';
+const BUILD_PATH = '../';
 const DIST_PATH = '../_dist';
 
 // [!] Gulp Tasks Listing

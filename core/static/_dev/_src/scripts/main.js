@@ -1,6 +1,8 @@
 'use strict';
 
+console.log('DJANGO Structure');
 var JB = {};
+
 
 /*
 jb.background =  () => {
