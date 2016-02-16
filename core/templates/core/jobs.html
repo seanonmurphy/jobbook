@@ -1,0 +1,34 @@
+{% extends 'core/base/base.html' %} {% block title %} Job List {% endblock %} {% block content %}
+<section class="margin-t200" id="js-jobs">
+  <h2>Jobs</h2>
+  <ul class="breadcrumbs">
+    <li><a href="#" class="active">All</a></li>
+    <li><a href="#">Recent updated</a></li>
+    <li><a href="#">Archived</a></li>
+  </ul>
+  <div class="container">
+    <ul class="job-list" id="js-joblist">
+     
+      {% for job in jobs %}
+      <li>
+        <a href="/job/{{job.job_name}}">
+          <div class="job-placeholder js-rand"><span>MS</span></div>
+          <div class="job-info">
+            <h4>{{ job.client }}</h4>
+            <h5>{{ job.job_name }}</h5>
+            <div class="progress">
+              <h6>Budget <span>50%</span></h6>
+              <div class="status  js-progress" data-progress="50">
+                <span></span>
+              </div>
+            </div>
+          </div>
+        </a>
+      </li>
+      {% endfor %}
+      
+    </ul>
+  </div>
+</section>
+
+{% endblock %}
