@@ -117,7 +117,7 @@ jQuery.fn.extend({
 
     $(this)
       .css({
-      background: randomColor({ luminosity: 'bright', hue: 'monochromatic'})
+      background: randomColor({ luminosity: 'bright', hue: 'blue'})
     });
 
     return $(this);
@@ -138,13 +138,23 @@ JB.jobs = () => {
 
   JB.jobHover();
   $('#js-joblist li a').each(function () {
+
     $(this)
       .find('.js-progress')
       .getProgress();
 
+    var str = $(this)
+      .find('h4')
+      .html()
+      .match(/\b(\w)/g);
+
     $(this)
       .find('.js-rand')
-      .randomColor();
+      .randomColor()
+      .find('span')
+      .html(str);
+
+
   });
 };
 
@@ -165,9 +175,29 @@ JB.details = () => {
   });
 }
 
+JB.clients = () => {
+  $('#js-clientlist li a').each(function () {
+
+  var str = $(this)
+    .find('h4')
+    .html()
+    .match(/\b(\w)/g)
+    .join('');
+
+    console.log(str);
+
+    $(this)
+      .find('.js-rand')
+      .randomColor()
+      .find('span')
+      .html(str);
+  });
+}
+
 $(document).ready(() => {
   if (document.getElementById("js-jobs")) { JB.jobs(); }
-  if (document.getElementById("js-details")) { JB.details(); }
+  if (document.getElementById("js-jobdetails")) { JB.details(); }
+  if (document.getElementById("js-clients")) { JB.clients(); }
 });
 
 

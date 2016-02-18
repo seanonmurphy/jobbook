@@ -27,12 +27,15 @@
 
 // Components
 // @import "components/_buttons";
+@import "components/_layout";
+@import "components/_animations";
 
 // Specifics
 @import "specifics/_header";
 @import "specifics/_layout";
 @import "specifics/_jobs";
 @import "specifics/_details";
+@import "specifics/_clients";
 
 // Vendor
 // @import "vendor/_owl-carousel";

@@ -1,0 +1,10 @@
+%anim-hover-up {
+  transition: all 1s ease;
+  cursor: pointer;
+  transition: transform .5s ease;
+  transform: translateY(-5px);
+  .job-img {
+    transition: transform .2s ease;
+    transform: translateY(-2px);
+  }
+}

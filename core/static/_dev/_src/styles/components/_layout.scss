@@ -1,0 +1,26 @@
+.avatar {
+  display: inline-table;
+  width: 118px;
+  height: 120px;
+  background: $color-light-grey;
+  border-radius: 3px;
+  transition: transform .5s ease;
+  border-radius: 3px;
+  span {
+    color: #fff;
+    text-align: center;
+    display: table-cell;
+    vertical-align: middle;
+    font-size: 50px;
+  }
+  img {
+    filter: grayscale(1);
+    mix-blend-mode: multiply;
+    width: 80px;
+    height: auto;
+    text-align: center;
+    text-align: center;
+    display: table-cell;
+    vertical-align: middle;
+  }
+}

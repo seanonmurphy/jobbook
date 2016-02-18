@@ -1,28 +1,8 @@
 // Init
-$job-height: 130px;
+$job-height: 120px;
 $colorStart: $color-light-blue;
 $colorMid: $color-green;
 $colorEnd: $color-red;
-
-
-// Aninations
-//////////////////////////
-
-// Animation Jobs
-%anim-hover-jobs {
-  transition: all 1s ease;
-  cursor: pointer;
-  transition: transform .5s ease;
-  transform: translateY(-5px);
-  .job-img {
-    transition: transform .2s ease;
-    transform: translateY(-2px);
-  }
-}
-
-
-// Placeholders
-////////////////////////
 
 
 // Placeholder (job-list)
@@ -36,7 +16,7 @@ $colorEnd: $color-red;
   transition: all .7s ease;
   background: #fff;
   padding: 15px;
-  &:hover{ @extend %anim-hover-jobs }
+  &:hover{ @extend %anim-hover-up  }
 }
 
 
@@ -54,32 +34,6 @@ $colorEnd: $color-red;
   display: inline-flex;
   flex-direction: column;
   h5 { font-weight: bolder; }
-}
-
-.job-placeholder {display: inline-table;
-  width: 118px;
-  height: 120px;
-  background: $color-light-grey;
-  border-radius: 3px;
-  transition: transform .5s ease;
-  border-radius: 3px;
-  span {
-    color: #fff;
-    text-align: center;
-    display: table-cell;
-    vertical-align: middle;
-    font-size: 50px;
-  }
-  img {
-    filter: grayscale(1);
-    mix-blend-mode: multiply;
-    width: 80px;
-    height: auto;
-    text-align: center;
-    text-align: center;
-    display: table-cell;
-    vertical-align: middle;
-  }
 }
 
 .progress {
@@ -103,7 +57,6 @@ $colorEnd: $color-red;
       width: 0%;
       height: 15px;
       transition: width 1.5s ease-in-out;
-      //background-image: linear-gradient(to right, $colorStart 0%, $colorMid 40%, $colorEnd 100%);
       background-image: linear-gradient(to right, #f1a165, #f36d0a);
       background-size: 100%;
     }

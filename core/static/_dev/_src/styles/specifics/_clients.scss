@@ -1,0 +1,30 @@
+// Placeholder (job-list)
+%job-client-li {
+  a { display: block; color: $color-black; }
+  text-align: center;
+  position: relative;
+  float: left;
+  width: 300px;
+  height: 200px;
+  margin: 0 20px 20px 0;
+  transition: all .7s ease;
+  background: #fff;
+  padding: 15px;
+  h4 {
+    margin-top: 15px;
+    font-weight: bolder;
+    text-transform: uppercase;
+  }
+  &:hover { @extend %anim-hover-up; }
+}
+
+.client-list {
+  padding: 20px 0;
+  display: block;
+  li {
+    @extend %job-client-li;
+  }
+  .avatar {
+    width: 100%;
+  }
+}

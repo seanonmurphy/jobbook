@@ -11,8 +11,8 @@
      
       {% for job in jobs %}
       <li>
-        <a href="/job/{{job.job_name}}">
-          <div class="job-placeholder js-rand"><span>MS</span></div>
+        <a href="/job/{{job.id}}">
+          <div class="avatar js-rand"><span>MS</span></div>
           <div class="job-info">
             <h4>{{ job.client }}</h4>
             <h5>{{ job.job_name }}</h5>

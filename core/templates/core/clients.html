@@ -1,5 +1,5 @@
 {% extends 'core/base/base.html' %} {% block title %} Job List {% endblock %} {% block content %}
-<section class="margin-t200" id="js-jobs">
+<section class="margin-t200" id="js-clients">
   <h2>Clients</h2>
   <ul class="breadcrumbs">
     <li><a href="#" class="active">All</a></li>
@@ -7,6 +7,20 @@
     <li><a href="#">Archived</a></li>
   </ul>
   <div class="container">
+   
+    <ul class="client-list" id="js-clientlist">
+      {% for client in clients %}
+      <li>
+        <a href="/client/{{ client.id }}">
+          <div class="avatar js-rand"><span></span></div>
+          <div class="client-info">
+            <h4>{{ client.company }}</h4>
+            <h5>NOTES - JOBS: 10 - TASKS: 100</h5>
+          </div>
+        </a>
+      </li>
+      {% endfor %}
+    </ul>
   </div>
 </section>
 

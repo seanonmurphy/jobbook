@@ -17,6 +17,7 @@ def clients(request):
     all_clients = []
     for client in clients:
         cli = {
+            'id': client.id,
             'first_name': client.first_name,
             'last_name': client.last_name,
             'company': client.company
@@ -27,12 +28,18 @@ def clients(request):
     return render(request, 'core/clients.html', context)
 
 
+def client(request):
+    context = {}
+    return render(request, 'core/single-client.html', context)
+
+
 def jobs(request):
     jobs = Job.objects.all()
 
     all_jobs = []
     for job in jobs:
         j = {
+            'id': job.id,
             'job_name': job.job_name,
             'job_description': job.job_description,
             'client': job.client
