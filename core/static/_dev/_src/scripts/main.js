@@ -133,6 +133,26 @@ JB.jobHover = () => {
   });
 };
 
+JB.user = () => {
+  $('.js-user').on('click',function(e){
+    e.preventDefault();
+    $('.js-overlay')
+      .addClass('load')
+      .find('li')
+      .delay(150)
+      .each(function(index){
+      $(this).delay(index * 200).queue(()=> $(this).addClass('load').dequeue() );
+      })
+  });
+
+  $('.js-cancelmodal').click(function(e){
+    $('.js-overlay')
+      .removeClass('load')
+      .find('li')
+      .each(function() { $(this).removeClass('load') });
+  });
+};
+
 // Pages
 JB.jobs = () => {
 
@@ -195,9 +215,11 @@ JB.clients = () => {
 }
 
 $(document).ready(() => {
+
   if (document.getElementById("js-jobs")) { JB.jobs(); }
   if (document.getElementById("js-jobdetails")) { JB.details(); }
   if (document.getElementById("js-clients")) { JB.clients(); }
+  JB.user();
 });
 
 

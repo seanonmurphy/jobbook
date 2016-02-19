@@ -53,3 +53,8 @@ def jobs(request):
 def job(request):
     context = {}
     return render(request, 'core/single-job.html', context)
+
+
+def search(request):
+    context = {}
+    return render(request, 'core/search.html', context)

@@ -30,25 +30,19 @@
           <ul>
             <li>
               <a href="/jobs">
-               <i class="nav-icon">
-                  <img src="{% static 'img/icon-book.svg' %}">
-                </i>
+               <i class="nav-icon book"></i>
                 <span>List all jobs</span>
               </a>
             </li>
             <li>
               <a href="#">
-               <i class="nav-icon">
-                <img src= "{% static 'img/icon-write.svg' %}">
-               </i>
+               <i class="nav-icon write"></i>
                 <span>Add new job</span>
               </a>
             </li>
             <li>
               <a href="#">
-               <i class="nav-icon">
-                  <img src= "{% static 'img/icon-pin.svg' %}">
-                </i>
+               <i class="nav-icon pin"></i>
                 <span>Bookmarks</span>
               </a>
             </li>
@@ -59,17 +53,13 @@
           <ul>
             <li>
               <a href="/clients">
-               <i class="nav-icon">
-                <img src= "{% static 'img/icon-users.svg' %}">
-               </i>
+               <i class="nav-icon users"></i>
                 <span>List of clients</span>
               </a>
             </li>
             <li>
               <a href="#">
-               <i class="nav-icon">
-                <img src= "{% static 'img/icon-write.svg' %}">
-               </i>
+               <i class="nav-icon write"></i>
                 <span>Add new client</span>
               </a>
             </li>
@@ -77,14 +67,20 @@
         </li>
       </ul>
     </nav>
-    <input class="searchbox" type="text">
-    <div class="r-item">
-      <a href="#"><img src= "{% static 'img/icon-user.svg' %}"></a>
+    <form id="search" method="get" action="/search">
+    <input class="searchbox" type="text" name="q">
+    </form>
+    <div class="r-item" id="#js-user">
+      <a href="#" class="js-user">
+      <img src= "{% static 'img/icon-user.svg' %}">
+      </a>
     </div>
   </header>
   
   {%block content %}
   {% endblock %}
+  
+  {% include 'core/base/modal-user.html' %}
 
   <!-- build:js build/js/bundle.min.js -->
   <script src= "{% static 'js/vendors.js' %}"></script>
