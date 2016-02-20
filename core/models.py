@@ -9,6 +9,7 @@ class Client(models.Model):
     last_name = models.CharField(max_length=64)
     company = models.CharField(max_length=128)
     phone_number = models.CharField(max_length=32)
+    email = models.CharField(max_length=64)
     client_since = models.DateTimeField(blank=True, null=True)
 
     def add_client(self):

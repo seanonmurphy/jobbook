@@ -1,16 +1,17 @@
-{% extends 'core/base/base.html' %} 
-{% block title %} Job List {% endblock %} 
+{% extends 'core/base/base.html' %}
+{% block title %} Job List {% endblock %}
 
 {% block content %}
 <section class="details margin-t200 margin-b40-h2" id="js-clientdetails">
-  <h2>JOBBOOK TEAM</h2>
+  <h2>{{ client.company }}</h2>
 
   <div class="container">
     <div class="header-info">
       <div class="avatar js-rand"><span>SK</span></div>
       <div class="desc">
-        <p><strong>CCO:</strong> First name</p>
-        <p><strong>Email:</strong> undefined@undefined.com</p>
+        <p><strong>CCO: </strong>{{ client }}</p>
+        <p><strong>Email: </strong>{{ client.email }}</p>
+        <p><strong>Phone: </strong>{{ client.phone_number }}</p>
       </div>
       <div class="report-status">
         <p><strong>Status:</strong>10H / 100H</p>

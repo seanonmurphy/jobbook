@@ -28,9 +28,19 @@ def clients(request):
     return render(request, 'core/clients.html', context)
 
 
-def client(request):
-    context = {}
+def client_detail(request, client_id):
+    client = get_object_or_404(Client, pk=client_id)
+
+    context = {'client': client}
     return render(request, 'core/single-client.html', context)
+
+
+def client_edit(request, client_id):
+    pass
+
+
+def client_new(request):
+    pass
 
 
 def jobs(request):

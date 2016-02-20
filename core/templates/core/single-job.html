@@ -4,7 +4,7 @@
 {% block content %}
 <section class="details margin-t200" id="js-jobdetails">
   <h2>{{ job.job_name }}</h2>
-  <p class="info"><a href="#">{{ job.client }}</a> / created on 2015, january 29 <span>ARCHIVED</span></p>
+  <p class="info"><a href="#">{{ job.client }}</a> / {% if job.job_created %}created on {{ job.job_created }} {% endif %}<span>ARCHIVED</span></p>
 
   <div class="container">
     <div class="header-info">
