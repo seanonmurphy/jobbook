@@ -1,21 +1,21 @@
-{% extends 'core/base/base.html' %} 
-{% block title %} Job List {% endblock %} 
+{% extends 'core/base/base.html' %}
+{% block title %} Job List {% endblock %}
 
 {% block content %}
 <section class="details margin-t200" id="js-jobdetails">
-  <h2>HANGOUT IMPROVEMENTS</h2>
-  <p class="info"><a href="#">Google</a> / create at 2015, january 29 <span>ARCHIVED</span></p>
+  <h2>{{ job.job_name }}</h2>
+  <p class="info"><a href="#">{{ job.client }}</a> / created on 2015, january 29 <span>ARCHIVED</span></p>
 
   <div class="container">
     <div class="header-info">
       <div class="avatar js-rand"><span>SK</span></div>
       <div class="desc">
-        <span>Desc</span>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus imperdiet mollis turpis nec tincidunt. Pellentesque quis placerat odio. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Aenean nisi purus</p>
+        <span>Description</span>
+        <p>{{ job.job_description }}</p>
       </div>
       <div class="report-status">
         <p><strong>Status:</strong>10H / 100H</p>
-        <p><strong>Hourly rate:</strong>$50</p>
+        <p><strong>Hourly rate:</strong>${{ job.hourly_rate }}</p>
         <p><strong>Status 03:</strong>undefined</p>
         <div class="progress">
           <h6>Budget <span>50%</span></h6>

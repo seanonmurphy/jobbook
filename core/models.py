@@ -30,6 +30,12 @@ class Job(models.Model):
     job_description = models.TextField()
     hourly_rate = models.IntegerField(blank=True, null=True)
     client = models.ForeignKey('Client')
+    job_created = models.DateTimeField(blank=True, null=True)
+
+    def add_job(self):
+        """Method to save a new job."""
+        self.job_created = timezone.now()
+        self.save()
 
     def __str__(self):
         return self.job_name

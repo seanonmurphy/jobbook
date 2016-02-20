@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 # from django.contrib.auth.models import User
 from .models import Client, Job
 
@@ -50,9 +50,19 @@ def jobs(request):
     return render(request, 'core/jobs.html', context)
 
 
-def job(request):
-    context = {}
+def job_detail(request, job_id):
+    job = get_object_or_404(Job, pk=job_id)
+
+    context = {'job': job}
     return render(request, 'core/single-job.html', context)
+
+
+def job_edit(request):
+    pass
+
+
+def job_new(request):
+    pass
 
 
 def search(request):
