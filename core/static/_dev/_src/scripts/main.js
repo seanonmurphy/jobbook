@@ -136,7 +136,9 @@ JB.jobHover = () => {
 JB.user = () => {
   $('.js-user').on('click',function(e){
     e.preventDefault();
-    $('.js-overlay')
+    $('html body').addClass('hidden');
+
+    $('.js-modaluser')
       .addClass('load')
       .find('li')
       .delay(150)
@@ -146,10 +148,12 @@ JB.user = () => {
   });
 
   $('.js-cancelmodal').click(function(e){
-    $('.js-overlay')
+    $('.js-modaluser')
       .removeClass('load')
       .find('li')
       .each(function() { $(this).removeClass('load') });
+
+    $('html body').removeClass('hidden');
   });
 };
 
@@ -182,16 +186,66 @@ JB.details = () => {
   $('.js-rand').randomColor();
   $('.js-progress').getProgress();
 
+  let $editTask = $('#js-edit-task');
+
+  let closeEditTask = (el) => {
+    $(el)
+      .parent()
+      .parent()
+      .fadeOut()
+      .removeClass('open');
+  };
+
   $('.tasks-table tr').click(function(e) {
 
     let offsetWidth = this.offsetWidth;
     let checkRange = x => (x > offsetWidth + 30) && e.pageX < offsetWidth + 60;
 
     if ( checkRange(e.pageX) ) {
-      $('#js-edit-task')
-        .fadeIn()
-        .css({left: e.pageX - 80, top: e.pageY - 50})
+      $editTask
+        .addClass('open')
+        .fadeIn([3000,'swing'])
+        .css({left: e.pageX - 120, top: e.pageY - 150})
     }
+  });
+
+  $editTask
+    .find('a[name=cancel]')
+    .click(function(e){
+      e.preventDefault();
+      closeEditTask(this);
+  });
+
+  $editTask
+    .find('a[name=edit]')
+    .click(function (e) {
+      e.preventDefault();
+      $('html body').addClass('hidden');
+
+      closeEditTask(this);
+       $('.js-edit-job')
+        .css({height: $(document).height()})
+        .addClass('load')
+        .find('.js-modal-container')
+        .delay(150)
+        .queue(function(){ $(this).addClass('load').dequeue(); });
+    });
+
+  $('.js-close-modal').click(function(e){
+    e.preventDefault();
+    $('.js-modal-container')
+      .addClass('out')
+      .delay(700)
+      .queue(function(){
+        $(this)
+          .removeClass('out load')
+          .dequeue()
+          .parent()
+          .removeClass('load')
+          .dequeue();
+      });
+
+    $('html body').removeClass('hidden');
   });
 }
 

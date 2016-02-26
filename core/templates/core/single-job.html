@@ -62,10 +62,11 @@
 </section>
 
 <ul class="edit-popup" id="js-edit-task">
-  <li><a href="#">Edit Task</a></li>
-  <li><a href="#">Delete Task</a></li>
-  <li><a href="#">Cancel</a></li>
+  <li><a href="#" name="edit">Edit Task</a></li>
+  <li><a href="#" name="delete">Delete Task</a></li>
+  <li><a href="#" name="cancel">Cancel</a></li>
 </ul>
 
+{% include 'core/base/modal-job.html' %}
 
 {% endblock %}

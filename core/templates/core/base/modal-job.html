@@ -1,0 +1,36 @@
+<div class="modal-job js-edit-job">
+  <div class="modal-container js-modal-container">
+    <a href="#" class="button-close js-close-modal">X</a>
+    <h2>Change Task</h2>
+    <form method="get" action="/job-edit">
+      <div class="row">
+        <label for="name">Task Title</label>
+        <input class="task-form" type="text" name="title">
+      </div>
+      <div class="row">
+        <label for="desc">Task Description</label>
+        <textarea name="desc"></textarea>
+      </div>
+      <div class="row">
+        <label for="timer">Task Time</label>
+        <input class="task-form" type="time" name="time">
+        <span>Now</span>
+      </div>
+      <div class="row">
+        <span>Task created</span>
+        <fieldset>
+          <div class="sub-input">
+            <label for="timer">Date</label>
+            <input class="task-form" type="time" name="time">
+            <span>Now</span>
+          </div>
+          <div class="sub-input">
+            <label for="timer">Time</label>
+            <input class="task-form" type="time" name="time">
+            <span>Now</span>
+          </div>
+        </fieldset>
+      </div>
+    </form>
+  </div>
+</div>
