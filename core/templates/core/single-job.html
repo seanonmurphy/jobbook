@@ -30,7 +30,7 @@
 
 <section>
   <div class="container">
-    <h3>Accomplished tasks</h3>
+    <h3>Related tasks</h3>
     <ul class="breadcrumbs">
       <li><a href="#" class="active">All</a></li>
       <li><a href="#">Recents Tasks</a></li>
@@ -42,21 +42,13 @@
         <th>Time Spent</th>
         <th>When</th>
       </tr>
-      <tr>
-        <td>BACKING UP OLD FILES</td>
-        <td>2.5H</td>
-        <th>05/02/2015</th>
-      </tr>
-      <tr>
-        <td>CREATING A NEW TEMPLATE, PROTOTYPING</td>
-        <td>2.5H</td>
-        <th>YESTERDAY</th>
-      </tr>
-      <tr>
-        <td>BACK-END PROPOSAL</td>
-        <td>5H</td>
-        <th>YESTERDAY</th>
-      </tr>
+      {% for task in tasks %}
+        <tr>
+          <td>{{ task }}</td>
+          <td>{{ task.task_time }}</td>
+          <th>{{ task.task_created }}</th>
+        </tr>
+      {% endfor %}
     </table>
   </div>
 </section>

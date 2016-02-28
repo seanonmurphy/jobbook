@@ -7,7 +7,7 @@
     <li><a href="#">Archived</a></li>
   </ul>
   <div class="container">
-   
+
     <ul class="client-list" id="js-clientlist">
       {% for client in clients %}
       <li>
@@ -15,7 +15,7 @@
           <div class="avatar js-rand"><span></span></div>
           <div class="client-info">
             <h4>{{ client.company }}</h4>
-            <h5>NOTES - JOBS: 10 - TASKS: 100</h5>
+            <h5>JOBS: {{ client.jobs_count }} - TASKS: 100</h5>
           </div>
         </a>
       </li>
