@@ -256,7 +256,7 @@ gulp.task('serve:dist', () => {
 });
 
 // [!] Gulp Watch
-gulp.task('watch', () => {
+gulp.task('watch',['styles', 'scripts'], () => {
 
   header('Watching files without refreshing');
 
