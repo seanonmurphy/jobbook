@@ -44,7 +44,7 @@
       </tr>
       {% for job in jobs %}
         <tr>
-          <td>{{ job }}</td>
+          <td><a href="/job/{{ job.id }}">{{ job }}</a></td>
           <td>TBD</td>
           <th>{{ job.job_created }}</th>
         </tr>
