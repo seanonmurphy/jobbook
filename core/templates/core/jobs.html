@@ -8,10 +8,10 @@
   </ul>
   <div class="container">
     <ul class="job-list" id="js-joblist">
-     
+
       {% for job in jobs %}
       <li>
-        <a href="/job/{{job.id}}">
+        <a href="{% url 'job_detail' job_id=job.id %}">
           <div class="avatar js-rand"><span>MS</span></div>
           <div class="job-info">
             <h4>{{ job.client }}</h4>
@@ -26,7 +26,7 @@
         </a>
       </li>
       {% endfor %}
-      
+
     </ul>
   </div>
 </section>

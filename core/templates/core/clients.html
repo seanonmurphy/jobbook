@@ -11,7 +11,7 @@
     <ul class="client-list" id="js-clientlist">
       {% for client in clients %}
       <li>
-        <a href="/client/{{ client.id }}">
+        <a href="{% url 'client_detail' client_id=client.id %}">
           <div class="avatar js-rand"><span></span></div>
           <div class="client-info">
             <h4>{{ client.company }}</h4>

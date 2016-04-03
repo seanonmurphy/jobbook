@@ -1,11 +1,17 @@
 from django.shortcuts import render, get_object_or_404
+from django.views.generic import View
 # from django.contrib.auth.models import User
 from .models import Client, Job, Task
 
 
-def index(request):
-    context = {}
-    return render(request, 'core/index.html', context)
+# TODO - update all to use class based views
+
+class IndexView(View):
+    """View for the index page."""
+
+    def get(self, request, *args, **kwargs):
+        context = {}
+        return render(request, 'core/index.html', context)
 
 
 def clients(request):

@@ -1,8 +1,9 @@
 from django.conf.urls import url
 from . import views
 
+# TODO - update to use Class based views
 urlpatterns = [
-    url(r'^$', views.index, name='index'),
+    url(r'^$', views.IndexView.as_view(), name='index'),
     url(r'^clients/', views.clients, name='clients'),
     url(r'^client/(?P<client_id>[0-9]+)/$', views.client_detail, name='client_detail'),
     url(r'^client/(?P<client_id>[0-9]+)/edit/$', views.client_edit, name='client_edit'),
@@ -13,3 +14,7 @@ urlpatterns = [
     url(r'^job/new/$', views.job_new, name='job_new'),
     url(r'^search/', views.search, name='search'),
 ]
+
+
+# Custom error handling
+# handler404 = 'views.custom_page_not_found_view'

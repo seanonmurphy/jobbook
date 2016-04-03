@@ -15,7 +15,7 @@
 
 <body>
   <header>
-    <a href="/" class="logo">
+    <a href="{% url 'index' %}" class="logo">
       <img src="{% static 'img/logo-main.svg' %}" alt="Jobbook">
     </a>
     <nav>
@@ -29,7 +29,7 @@
         <li class="w-sub"><a href="#">Jobs</a>
           <ul>
             <li>
-              <a href="/jobs">
+              <a href="{% url 'jobs' %}">
                <i class="nav-icon book"></i>
                 <span>List all jobs</span>
               </a>
@@ -52,7 +52,7 @@
         <a href="#">Clients</a>
           <ul>
             <li>
-              <a href="/clients">
+              <a href="{% url 'clients' %}">
                <i class="nav-icon users"></i>
                 <span>List of clients</span>
               </a>
@@ -76,10 +76,10 @@
       </a>
     </div>
   </header>
-  
+
   {%block content %}
   {% endblock %}
-  
+
   {% include 'core/base/modal-user.html' %}
 
   <!-- build:js build/js/bundle.min.js -->
